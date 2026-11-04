@@ -1,0 +1,562 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prime Mármores e Granitos · Marmoraria no Rio de Janeiro</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Prime Marmoraria: mármores, granitos e superfícies industrializadas sob medida para cozinhas, banheiros, lavabos e áreas gourmet no Rio de Janeiro.">
+<meta property="og:title" content="Prime Mármores e Granitos">
+<meta property="og:description" content="Mármores, granitos e superfícies industrializadas sob medida no Rio de Janeiro.">
+<meta property="og:image" content="https://lucasjaxr6-ctrl.github.io/prime-marmoraria/og.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#11203D">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#11203D; --navy2:#0B1730; --navy3:#18294B;
+  --azul:#1E9BD7; --azul2:#1C55A8; --gelo:#F5F3EF; --pedra:#E7E2DA; --veio:#CFC7BB;
+  --tinta:#1A1F29; --mudo:#5E6675; --mudo-esc:#9BA8BF;
+  --serif:"Cormorant Garamond",Georgia,serif; --sans:"Manrope",system-ui,sans-serif;
+  --w:1200px; --r:4px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:var(--sans);color:var(--tinta);background:var(--gelo);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+:focus-visible{outline:2px solid var(--azul);outline-offset:3px}
+.wrap{max-width:var(--w);margin:0 auto;padding:0 28px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--azul2)}
+.eyebrow::before{content:"";display:inline-block;width:28px;height:1px;background:currentColor;vertical-align:middle;margin-right:12px}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.08;letter-spacing:-.01em}
+h2{font-size:clamp(34px,4.6vw,54px);margin:14px 0 18px}
+.lead{font-size:18px;color:var(--mudo);max-width:56ch}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 26px;border-radius:var(--r);font-weight:600;font-size:15px;letter-spacing:.02em;transition:transform .2s,background .2s,color .2s,border-color .2s}
+.btn:hover{transform:translateY(-1px)}
+.btn-azul{background:linear-gradient(135deg,var(--azul),var(--azul2));color:#fff}
+.btn-linha{border:1px solid rgba(255,255,255,.45);color:#fff}
+.btn-linha:hover{background:#fff;color:var(--navy)}
+.btn svg{width:18px;height:18px}
+
+/* header */
+header{position:fixed;inset:0 0 auto 0;z-index:60;transition:background .3s,box-shadow .3s}
+header.solid{background:rgba(17,32,61,.96);backdrop-filter:blur(10px);box-shadow:0 1px 0 rgba(255,255,255,.06)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:78px}
+.marca{display:flex;align-items:center}
+.marca img{height:58px;width:auto}
+.menu{display:flex;align-items:center;gap:34px;color:#fff;font-size:14px;font-weight:500}
+.menu a:not(.btn){opacity:.82;transition:opacity .2s}
+.menu a:not(.btn):hover{opacity:1}
+.menu .btn{padding:11px 20px;font-size:14px}
+.hamb{display:none;color:#fff;width:44px;height:44px;align-items:center;justify-content:center}
+.hamb svg{width:26px;height:26px}
+
+/* hero */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;color:#fff;background:var(--navy2)}
+.hero-bg{position:absolute;inset:0;overflow:hidden}
+.hero-bg img{width:100%;height:100%;object-fit:cover;transform:scale(1.04);animation:zoom 18s ease-out forwards}
+@keyframes zoom{to{transform:scale(1)}}
+.hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,23,48,.55) 0%,rgba(11,23,48,.25) 35%,rgba(11,23,48,.92) 100%),linear-gradient(90deg,rgba(11,23,48,.75),rgba(11,23,48,0) 70%)}
+.hero .wrap{position:relative;padding-bottom:clamp(60px,10vh,110px);padding-top:140px;width:100%}
+.hero .eyebrow{color:#7FCBF0}
+.hero h1{font-size:clamp(44px,7.4vw,92px);max-width:13ch;margin:18px 0 22px}
+.hero h1 em{font-style:italic;color:#8FD3F4}
+.hero p{font-size:clamp(16px,1.6vw,19px);color:rgba(255,255,255,.82);max-width:50ch;margin-bottom:34px}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:14px}
+.hero-faixa{display:flex;flex-wrap:wrap;gap:10px 34px;margin-top:56px;padding-top:24px;border-top:1px solid rgba(255,255,255,.16);font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.7)}
+.hero-faixa span::before{content:"◆";color:var(--azul);margin-right:10px;font-size:9px;vertical-align:2px}
+
+section{padding:clamp(80px,11vw,140px) 0}
+
+/* sobre */
+.sobre .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(40px,7vw,100px);align-items:center}
+.sobre-fotos{position:relative;aspect-ratio:4/4.4}
+.sobre-fotos img{position:absolute;object-fit:cover;border-radius:var(--r);box-shadow:0 30px 60px -30px rgba(17,32,61,.45)}
+.sobre-fotos .f1{inset:0 22% 18% 0;width:78%;height:82%}
+.sobre-fotos .f2{right:0;bottom:0;width:48%;height:52%;border:8px solid var(--gelo)}
+.sobre-txt p+p{margin-top:16px}
+.sobre-txt .lead{margin-bottom:16px}
+.selos{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:36px;padding-top:30px;border-top:1px solid var(--veio)}
+.selos b{display:block;font-family:var(--serif);font-size:24px;font-weight:600;color:var(--navy)}
+.selos small{font-size:13px;color:var(--mudo);line-height:1.45;display:block;margin-top:4px}
+
+/* servicos */
+.servicos{background:var(--navy);color:#fff;position:relative;overflow:hidden}
+.servicos::before{content:"";position:absolute;right:-140px;top:-140px;width:520px;height:520px;background:url(img/logo-prime.png) no-repeat top center/contain;opacity:.05;pointer-events:none}
+.servicos .eyebrow{color:#7FCBF0}
+.servicos .lead{color:var(--mudo-esc)}
+.serv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.1);margin-top:56px;border:1px solid rgba(255,255,255,.1)}
+.serv{background:var(--navy);padding:38px 32px 40px;transition:background .3s}
+.serv:hover{background:var(--navy3)}
+.serv .ic{width:46px;height:46px;color:var(--azul);margin-bottom:22px}
+.serv h3{font-size:27px;margin-bottom:10px}
+.serv p{color:var(--mudo-esc);font-size:15px}
+
+/* materiais */
+.mat-head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap}
+.mat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:52px}
+.mat{background:#fff;border-radius:var(--r);overflow:hidden;border:1px solid var(--pedra)}
+.mat .amostra{height:170px;position:relative}
+.mat .amostra svg{width:100%;height:100%;display:block}
+.mat .txt{padding:26px 28px 30px}
+.mat h3{font-size:28px;color:var(--navy);margin-bottom:8px}
+.mat p{font-size:15px;color:var(--mudo)}
+.mat ul{list-style:none;margin-top:16px;display:flex;flex-wrap:wrap;gap:8px}
+.mat li{font-size:12px;font-weight:600;letter-spacing:.04em;padding:6px 11px;border-radius:30px;background:var(--gelo);color:var(--navy)}
+
+/* portfolio */
+.portfolio{background:#fff}
+.port-head{text-align:center;max-width:680px;margin:0 auto}
+.port-head .lead{margin:0 auto}
+.filtros{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin:38px 0 40px}
+.filtros button{padding:9px 18px;border-radius:30px;font-size:14px;font-weight:600;color:var(--mudo);border:1px solid var(--pedra);transition:all .2s}
+.filtros button[aria-pressed="true"],.filtros button:hover{background:var(--navy);border-color:var(--navy);color:#fff}
+.galeria{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:240px;grid-auto-flow:dense;gap:14px}
+.galeria figure{position:relative;overflow:hidden;border-radius:var(--r);cursor:zoom-in;background:var(--pedra)}
+.galeria figure.alto{grid-row:span 2}
+.galeria figure.largo{grid-column:span 2}
+.galeria img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.galeria figure:hover img{transform:scale(1.05)}
+.galeria figcaption{position:absolute;inset:auto 0 0 0;padding:44px 18px 16px;color:#fff;background:linear-gradient(transparent,rgba(11,23,48,.85));font-size:14px;font-weight:600;opacity:0;transform:translateY(8px);transition:all .3s}
+.galeria figcaption small{display:block;font-weight:500;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#8FD3F4}
+.galeria figure:hover figcaption,.galeria figure:focus-visible figcaption{opacity:1;transform:none}
+.galeria figure.oculto{display:none}
+.port-cta{text-align:center;margin-top:44px}
+.link-ig{display:inline-flex;align-items:center;gap:10px;font-weight:600;color:var(--navy);border-bottom:1px solid var(--azul);padding-bottom:4px}
+.link-ig svg{width:18px;height:18px}
+
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:100;background:rgba(8,14,28,.94);display:none;align-items:center;justify-content:center;padding:60px 70px}
+.lb.on{display:flex}
+.lb img{max-height:82vh;max-width:100%;border-radius:var(--r);box-shadow:0 30px 80px rgba(0,0,0,.5)}
+.lb p{position:absolute;bottom:22px;left:0;right:0;text-align:center;color:#fff;font-size:15px}
+.lb button{position:absolute;color:#fff;width:52px;height:52px;display:flex;align-items:center;justify-content:center;border-radius:50%;transition:background .2s}
+.lb button:hover{background:rgba(255,255,255,.1)}
+.lb .x{top:16px;right:16px}.lb .ant{left:12px}.lb .prox{right:12px}
+.lb svg{width:28px;height:28px}
+
+/* processo */
+.proc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;margin-top:60px;counter-reset:p}
+.etapa{position:relative;padding-top:30px;border-top:1px solid var(--veio)}
+.etapa::before{counter-increment:p;content:"0" counter(p);position:absolute;top:-1px;left:0;padding-top:22px;font-family:var(--serif);font-size:15px;font-weight:600;color:var(--azul2);border-top:2px solid var(--azul2);width:44px;transform:translateY(-1px)}
+.etapa h3{font-size:26px;color:var(--navy);margin:26px 0 10px}
+.etapa p{font-size:15px;color:var(--mudo)}
+
+/* arquitetos */
+.arq{padding:0}
+.arq-box{display:grid;grid-template-columns:1fr 1fr;background:var(--pedra);border-radius:var(--r);overflow:hidden}
+.arq-box img{width:100%;height:100%;object-fit:cover;min-height:360px}
+.arq-txt{padding:clamp(36px,6vw,70px)}
+.arq-txt h2{font-size:clamp(30px,3.6vw,44px)}
+.arq-txt p{color:var(--mudo);margin-bottom:26px}
+.arq-txt .btn-azul{margin-top:4px}
+
+/* orcamento */
+.orc{background:linear-gradient(160deg,var(--navy2),var(--navy) 60%,#16305e);color:#fff}
+.orc .wrap{display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(40px,7vw,90px);align-items:start}
+.orc .eyebrow{color:#7FCBF0}
+.orc .lead{color:var(--mudo-esc);margin-bottom:34px}
+.contatos{list-style:none;display:grid;gap:16px}
+.contatos a{display:flex;align-items:center;gap:16px;padding:16px 18px;border:1px solid rgba(255,255,255,.12);border-radius:var(--r);transition:border-color .2s,background .2s}
+.contatos a:hover{border-color:var(--azul);background:rgba(30,155,215,.08)}
+.contatos .ic{width:42px;height:42px;border-radius:50%;background:rgba(30,155,215,.15);color:#7FCBF0;display:flex;align-items:center;justify-content:center;flex:none}
+.contatos .ic svg{width:20px;height:20px}
+.contatos small{display:block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--mudo-esc)}
+.contatos b{font-weight:600;font-size:16px;word-break:break-word}
+form{background:#fff;color:var(--tinta);border-radius:var(--r);padding:clamp(26px,4vw,42px);box-shadow:0 40px 80px -40px rgba(0,0,0,.6)}
+form h3{font-size:30px;color:var(--navy);margin-bottom:6px}
+form>p{font-size:14px;color:var(--mudo);margin-bottom:24px}
+.campos{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.campo{display:flex;flex-direction:column;gap:6px}
+.campo.full{grid-column:1/-1}
+.campo label{font-size:13px;font-weight:600;color:var(--navy)}
+.campo input,.campo select,.campo textarea{font:inherit;font-size:15px;padding:13px 14px;border:1px solid var(--veio);border-radius:var(--r);background:var(--gelo);color:var(--tinta);transition:border-color .2s,background .2s;width:100%}
+.campo input:focus,.campo select:focus,.campo textarea:focus{outline:none;border-color:var(--azul);background:#fff}
+.campo textarea{min-height:110px;resize:vertical}
+form .btn{width:100%;justify-content:center;margin-top:22px;font-size:16px;padding:17px}
+form .nota{font-size:12px;color:var(--mudo);text-align:center;margin-top:12px}
+
+/* footer */
+footer{background:var(--navy2);color:var(--mudo-esc);padding:64px 0 34px;font-size:14px}
+.ft{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.08)}
+.ft img{height:82px;width:auto;margin-bottom:18px}
+.ft h4{color:#fff;font-size:13px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:16px}
+.ft ul{list-style:none;display:grid;gap:9px}
+.ft a:hover{color:#fff}
+.redes{display:flex;gap:10px;margin-top:20px}
+.redes a{width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,.16);display:flex;align-items:center;justify-content:center;color:#fff;transition:background .2s,border-color .2s}
+.redes a:hover{background:var(--azul2);border-color:var(--azul2)}
+.redes svg{width:18px;height:18px}
+.copy{padding-top:26px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:13px}
+
+/* whatsapp flutuante */
+.wpp{position:fixed;right:22px;bottom:22px;z-index:70;width:60px;height:60px;border-radius:50%;background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 30px -8px rgba(0,0,0,.45);transition:transform .2s}
+.wpp:hover{transform:scale(1.07)}
+.wpp svg{width:32px;height:32px}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.hero-bg img{animation:none;transform:none}html{scroll-behavior:auto}}
+
+/* responsivo */
+@media (max-width:980px){
+  .menu{position:fixed;inset:78px 0 auto 0;flex-direction:column;align-items:stretch;gap:0;background:var(--navy);padding:8px 28px 26px;transform:translateY(-12px);opacity:0;pointer-events:none;transition:all .25s;box-shadow:0 20px 40px rgba(0,0,0,.3)}
+  .menu.on{transform:none;opacity:1;pointer-events:auto}
+  .menu a:not(.btn){padding:15px 0;border-bottom:1px solid rgba(255,255,255,.08);font-size:16px}
+  .menu .btn{margin-top:18px;justify-content:center;padding:14px}
+  .hamb{display:flex}
+  header:has(.menu.on){background:var(--navy)}
+  .sobre .wrap,.orc .wrap,.arq-box{grid-template-columns:1fr}
+  .serv-grid,.mat-grid{grid-template-columns:1fr 1fr}
+  .proc-grid{grid-template-columns:1fr 1fr;row-gap:44px}
+  .galeria{grid-template-columns:repeat(2,1fr);grid-auto-rows:200px}
+  .ft{grid-template-columns:1fr 1fr}.ft>div:first-child{grid-column:1/-1}
+}
+@media (max-width:620px){
+  .wrap{padding:0 20px}
+  .marca img{height:42px}
+  .serv-grid,.mat-grid,.proc-grid,.campos{grid-template-columns:1fr}
+  .selos{grid-template-columns:1fr;gap:14px}
+  .galeria{grid-auto-rows:170px;gap:10px}
+  .galeria figure.largo{grid-column:span 2}
+  .galeria figcaption{opacity:1;transform:none;padding:30px 12px 10px;font-size:13px}
+  .ft{grid-template-columns:1fr}
+  .hero-ctas{flex-direction:column}.hero-ctas .btn{justify-content:center}
+  .lb{padding:60px 14px}
+  .lb .ant,.lb .prox{bottom:14px;top:auto}
+}
+</style>
+</head>
+<body>
+
+<header id="topo">
+  <div class="wrap">
+    <a href="#inicio" class="marca" aria-label="Prime Mármores e Granitos, início"><img src="img/logo-prime.png" alt="Prime Mármores e Granitos"></a>
+    <nav class="menu" id="menu" aria-label="Principal">
+      <a href="#sobre">A Prime</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#materiais">Materiais</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#processo">Como trabalhamos</a>
+      <a href="#orcamento" class="btn btn-azul">Pedir orçamento</a>
+    </nav>
+    <button class="hamb" id="hamb" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="inicio" style="padding:0">
+  <div class="hero-bg"><img src="img/cozinha-vista-mar.jpg" alt="Ilha de cozinha em pedra branca com vista para o mar"></div>
+  <div class="wrap">
+    <span class="eyebrow">Marmoraria · Rio de Janeiro</span>
+    <h1>A pedra certa, <em>sob medida</em> para o seu projeto.</h1>
+    <p>Mármores, granitos e superfícies industrializadas para cozinhas, banheiros, lavabos e áreas gourmet — com medição, corte e instalação feitos pela nossa equipe.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-azul" href="#orcamento">Solicitar orçamento
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn btn-linha" href="#projetos">Ver projetos</a>
+    </div>
+    <div class="hero-faixa"><span>Mármores</span><span>Granitos</span><span>Quartzo</span><span>Superfícies ultracompactas</span></div>
+  </div>
+</section>
+
+<section class="sobre" id="sobre">
+  <div class="wrap">
+    <div class="sobre-fotos rv">
+      <img class="f1" src="img/sala-jantar.jpg" alt="Mesa de jantar redonda com tampo de mármore" loading="lazy">
+      <img class="f2" src="img/lavabo-cuba.jpg" alt="Lavabo com bancada em pedra clara e cuba preta" loading="lazy">
+    </div>
+    <div class="sobre-txt rv">
+      <span class="eyebrow">A Prime</span>
+      <h2>Acabamento que se nota no detalhe.</h2>
+      <p class="lead">A Prime Mármores e Granitos transforma pedra natural e superfícies industrializadas em peças sob medida, do tampo de uma mesa à cozinha completa.</p>
+      <p>Trabalhamos lado a lado com clientes, arquitetos e designers de interiores para que cada recorte, cada borda e cada emenda saiam exatamente como o projeto pede. Ajudamos a escolher o material certo para o uso de cada ambiente, cuidamos da medição no local e entregamos a peça instalada.</p>
+      <div class="selos">
+        <div><b>Sob medida</b><small>Cada peça produzida a partir da medição do seu espaço</small></div>
+        <div><b>Do início ao fim</b><small>Visita técnica, produção e instalação</small></div>
+        <div><b>Parceria</b><small>Atendimento dedicado a arquitetos e designers</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="servicos" id="servicos">
+  <div class="wrap">
+    <div class="rv">
+      <span class="eyebrow">Serviços</span>
+      <h2>O que fazemos</h2>
+      <p class="lead">Da área molhada à área social, executamos projetos residenciais e comerciais com o mesmo cuidado.</p>
+    </div>
+    <div class="serv-grid">
+      <article class="serv rv">
+        <svg class="ic" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M4 20h40v6H4z"/><path d="M8 26v16M40 26v16M14 20v-6h8v6M30 14a4 4 0 0 1 8 0v6"/></svg>
+        <h3>Cozinhas e ilhas</h3>
+        <p>Bancadas, ilhas, frontões e cubas esculpidas, com recortes para cooktop e cuba de embutir.</p>
+      </article>
+      <article class="serv rv">
+        <svg class="ic" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M6 24h36v6a8 8 0 0 1-8 8H14a8 8 0 0 1-8-8z"/><path d="M14 24v-4a5 5 0 0 1 5-5h0M30 10v8M26 14h8M18 38l-2 4M30 38l2 4"/></svg>
+        <h3>Banheiros e lavabos</h3>
+        <p>Bancadas suspensas, cubas esculpidas, nichos, saias e revestimentos de parede.</p>
+      </article>
+      <article class="serv rv">
+        <svg class="ic" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M6 16h36v6H6zM10 22v20M38 22v20M16 8h16v8"/><circle cx="24" cy="32" r="4"/></svg>
+        <h3>Áreas gourmet e bares</h3>
+        <p>Bancadas de churrasqueira, balcões e bares, inclusive com pedras translúcidas retroiluminadas.</p>
+      </article>
+      <article class="serv rv">
+        <svg class="ic" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M6 42h12v-8h8v-8h8v-8h8V6"/><path d="M6 42h36"/></svg>
+        <h3>Escadas e pisos</h3>
+        <p>Degraus, espelhos, rodapés e pisos em pedra com acabamento polido, levigado ou flameado.</p>
+      </article>
+      <article class="serv rv">
+        <svg class="ic" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><rect x="8" y="6" width="32" height="36"/><path d="M8 34h32M24 6v28M4 42h40"/></svg>
+        <h3>Soleiras e peitoris</h3>
+        <p>Soleiras, peitoris, baguetes e filetes para portas e janelas, com pingadeira quando necessário.</p>
+      </article>
+      <article class="serv rv">
+        <svg class="ic" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><ellipse cx="24" cy="16" rx="18" ry="6"/><path d="M24 22v18M16 42h16"/></svg>
+        <h3>Peças especiais</h3>
+        <p>Tampos de mesa, aparadores, lareiras e peças de mobiliário desenhadas pelo seu arquiteto.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="materiais" id="materiais">
+  <div class="wrap">
+    <div class="mat-head rv">
+      <div>
+        <span class="eyebrow">Materiais</span>
+        <h2>Natural ou industrializada</h2>
+      </div>
+      <p class="lead">Cada material tem seu temperamento. Orientamos a escolha pelo uso do ambiente, pela manutenção desejada e pela estética do projeto.</p>
+    </div>
+    <div class="mat-grid">
+      <article class="mat rv">
+        <div class="amostra" aria-hidden="true">
+          <svg viewBox="0 0 400 170" preserveAspectRatio="none"><rect width="400" height="170" fill="#F1EEE8"/><path d="M-10 40 C 60 70 120 20 190 60 S 330 40 410 90" stroke="#BFB6A8" stroke-width="1.6" fill="none"/><path d="M-10 120 C 80 90 140 150 230 110 S 350 130 410 70" stroke="#CFC7BB" stroke-width="1" fill="none"/><path d="M120 -10 C 140 50 110 100 160 180" stroke="#B3A998" stroke-width=".8" fill="none"/></svg>
+        </div>
+        <div class="txt">
+          <h3>Mármores</h3>
+          <p>Veios únicos e elegância atemporal. Ideal para lavabos, bancadas de banheiro, mesas e paredes de destaque.</p>
+          <ul><li>Carrara</li><li>Travertino</li><li>Calacatta</li></ul>
+        </div>
+      </article>
+      <article class="mat rv">
+        <div class="amostra" aria-hidden="true">
+          <svg viewBox="0 0 400 170" preserveAspectRatio="none"><defs><pattern id="gr" width="14" height="14" patternUnits="userSpaceOnUse"><rect width="14" height="14" fill="#2A2C31"/><circle cx="3" cy="4" r="1.6" fill="#55585F"/><circle cx="10" cy="9" r="1.1" fill="#8A8D93"/><circle cx="6" cy="12" r=".9" fill="#1A1B1F"/><circle cx="12" cy="2" r=".8" fill="#6E7178"/></pattern></defs><rect width="400" height="170" fill="url(#gr)"/></svg>
+        </div>
+        <div class="txt">
+          <h3>Granitos</h3>
+          <p>Alta resistência a calor, riscos e uso intenso. A escolha prática para cozinhas, churrasqueiras e áreas externas.</p>
+          <ul><li>São Gabriel</li><li>Preto Absoluto</li><li>Branco Itaúnas</li></ul>
+        </div>
+      </article>
+      <article class="mat rv">
+        <div class="amostra" aria-hidden="true">
+          <svg viewBox="0 0 400 170" preserveAspectRatio="none"><defs><linearGradient id="qz" x1="0" x2="1"><stop offset="0" stop-color="#E9E6E1"/><stop offset="1" stop-color="#D9D4CC"/></linearGradient></defs><rect width="400" height="170" fill="url(#qz)"/><path d="M-10 100 C 100 80 200 130 410 60" stroke="#C3BBAF" stroke-width="2.4" fill="none" opacity=".6"/></svg>
+        </div>
+        <div class="txt">
+          <h3>Superfícies industrializadas</h3>
+          <p>Uniformidade de cor, baixa porosidade e fácil manutenção, inclusive em grandes formatos e espessuras finas.</p>
+          <ul><li>Quartzo</li><li>Ultracompactas</li><li>Porcelanato técnico</li></ul>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="portfolio" id="projetos">
+  <div class="wrap">
+    <div class="port-head rv">
+      <span class="eyebrow">Projetos</span>
+      <h2>Trabalhos realizados</h2>
+      <p class="lead">Uma seleção de projetos executados pela Prime. Clique nas fotos para ampliar.</p>
+    </div>
+    <div class="filtros" role="group" aria-label="Filtrar projetos">
+      <button aria-pressed="true" data-f="todos">Todos</button>
+      <button aria-pressed="false" data-f="cozinha">Cozinhas</button>
+      <button aria-pressed="false" data-f="banheiro">Banheiros e lavabos</button>
+      <button aria-pressed="false" data-f="social">Área social</button>
+    </div>
+    <div class="galeria" id="galeria">
+      <figure class="largo alto" data-c="cozinha" tabindex="0"><img src="img/cozinha-vista-mar.jpg" alt="Ilha de cozinha em pedra branca integrada à sala com vista para o mar" loading="lazy"><figcaption><small>Cozinha</small>Ilha em pedra branca com vista para o mar</figcaption></figure>
+      <figure class="alto" data-c="social" tabindex="0"><img src="img/bar-onix.jpg" alt="Bar com balcão em pedra translúcida retroiluminada" loading="lazy"><figcaption><small>Bar</small>Balcão em ônix retroiluminado</figcaption></figure>
+      <figure class="alto" data-c="banheiro" tabindex="0"><img src="img/lavabo-preto.jpg" alt="Lavabo com bancada esculpida em pedra escura" loading="lazy"><figcaption><small>Lavabo</small>Bancada com cuba esculpida em pedra escura</figcaption></figure>
+      <figure class="alto" data-c="cozinha" tabindex="0"><img src="img/cozinha-preta.jpg" alt="Cozinha com bancada preta e marcenaria em madeira" loading="lazy"><figcaption><small>Cozinha</small>Bancada preta com cuba dupla</figcaption></figure>
+      <figure class="alto" data-c="social" tabindex="0"><img src="img/sala-jantar.jpg" alt="Mesa de jantar redonda com tampo de mármore" loading="lazy"><figcaption><small>Sala de jantar</small>Tampo de mesa em mármore</figcaption></figure>
+      <figure class="alto" data-c="banheiro" tabindex="0"><img src="img/banheiro-branco.jpg" alt="Bancada suspensa branca com duas cubas de apoio" loading="lazy"><figcaption><small>Banheiro</small>Bancada suspensa com cubas de apoio</figcaption></figure>
+      <figure class="alto" data-c="banheiro" tabindex="0"><img src="img/lavabo-cuba.jpg" alt="Lavabo com bancada em pedra clara e cuba preta de apoio" loading="lazy"><figcaption><small>Lavabo</small>Pedra clara com cuba de apoio preta</figcaption></figure>
+    </div>
+    <div class="port-cta">
+      <a class="link-ig" href="https://www.instagram.com/primemarmorariarj/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        Veja mais projetos no Instagram</a>
+    </div>
+  </div>
+</section>
+
+<section class="processo" id="processo">
+  <div class="wrap">
+    <div class="rv">
+      <span class="eyebrow">Como trabalhamos</span>
+      <h2>Do orçamento à instalação</h2>
+      <p class="lead">Um processo claro, para você saber exatamente o que acontece em cada etapa.</p>
+    </div>
+    <div class="proc-grid">
+      <div class="etapa rv"><h3>Orçamento</h3><p>Você envia o projeto, as medidas aproximadas ou fotos do ambiente e retornamos com as opções de material.</p></div>
+      <div class="etapa rv"><h3>Escolha da pedra</h3><p>Ajudamos a definir material, cor, acabamento e tipo de borda de acordo com o uso e o seu projeto.</p></div>
+      <div class="etapa rv"><h3>Medição</h3><p>Nossa equipe vai ao local fazer a medição técnica final, garantindo o encaixe perfeito das peças.</p></div>
+      <div class="etapa rv"><h3>Produção e instalação</h3><p>Cortamos, damos acabamento e instalamos, deixando o ambiente pronto para uso.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="arq">
+  <div class="wrap">
+    <div class="arq-box rv">
+      <img src="img/lavabo-preto.jpg" alt="Detalhe de bancada esculpida em pedra escura" loading="lazy">
+      <div class="arq-txt">
+        <span class="eyebrow">Arquitetos e designers</span>
+        <h2>Seu projeto executado com fidelidade.</h2>
+        <p>Atuamos em parceria com escritórios de arquitetura e design de interiores, interpretando detalhamentos técnicos e mantendo o prazo da obra. Envie seu projeto e conte com atendimento dedicado.</p>
+        <a class="btn btn-azul" href="https://api.whatsapp.com/send?phone=5521970387237&text=Ol%C3%A1!%20Sou%20arquiteto(a)%20e%20gostaria%20de%20falar%20sobre%20um%20projeto." target="_blank" rel="noopener">Falar sobre parceria</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="orc" id="orcamento">
+  <div class="wrap">
+    <div class="rv">
+      <span class="eyebrow">Orçamento</span>
+      <h2>Vamos conversar sobre o seu projeto?</h2>
+      <p class="lead">Preencha o formulário e ele abre direto no nosso WhatsApp, ou fale com a gente pelos canais abaixo.</p>
+      <ul class="contatos">
+        <li><a href="https://api.whatsapp.com/send?phone=5521970387237" target="_blank" rel="noopener">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7c.1.2 1.9 2.9 4.6 4 1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.5-.3z"/></svg></span>
+          <span><small>WhatsApp</small><b>(21) 97038-7237</b></span></a></li>
+        <li><a href="mailto:contato@primemarmoraria.com.br">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
+          <span><small>E-mail</small><b>contato@primemarmoraria.com.br</b></span></a></li>
+        <li><a href="https://www.instagram.com/primemarmorariarj/" target="_blank" rel="noopener">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></span>
+          <span><small>Instagram</small><b>@primemarmorariarj</b></span></a></li>
+      </ul>
+    </div>
+    <form id="form" class="rv" novalidate>
+      <h3>Solicite seu orçamento</h3>
+      <p>Responderemos o mais rápido possível.</p>
+      <div class="campos">
+        <div class="campo"><label for="nome">Nome</label><input id="nome" name="nome" required autocomplete="name" placeholder="Seu nome"></div>
+        <div class="campo"><label for="tel">Telefone</label><input id="tel" name="tel" type="tel" autocomplete="tel" placeholder="(21) 90000-0000"></div>
+        <div class="campo"><label for="amb">Ambiente</label>
+          <select id="amb" name="amb"><option>Cozinha</option><option>Banheiro</option><option>Lavabo</option><option>Área gourmet</option><option>Escada / piso</option><option>Soleiras e peitoris</option><option>Outro</option></select></div>
+        <div class="campo"><label for="mat">Material de interesse</label>
+          <select id="mat" name="mat"><option>Ainda não sei</option><option>Mármore</option><option>Granito</option><option>Quartzo</option><option>Superfície ultracompacta</option></select></div>
+        <div class="campo full"><label for="msg">Conte sobre o projeto</label><textarea id="msg" name="msg" placeholder="Medidas aproximadas, bairro da obra, prazo…"></textarea></div>
+      </div>
+      <button class="btn btn-azul" type="submit">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z" opacity=".25"/><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Enviar pelo WhatsApp</button>
+      <p class="nota">Ao enviar, o WhatsApp abre com a sua mensagem pronta.</p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="ft">
+      <div>
+        <img src="img/logo-prime.png" alt="Prime Mármores e Granitos">
+        <p>Mármores, granitos e superfícies industrializadas sob medida no Rio de Janeiro.</p>
+        <div class="redes">
+          <a href="https://www.instagram.com/primemarmorariarj/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="https://www.facebook.com/primemarmorariarj/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7.5H16l.4-3h-2.9V8.6c0-.9.3-1.5 1.5-1.5h1.5V4.4c-.3 0-1.2-.1-2.2-.1-2.2 0-3.7 1.3-3.7 3.8v2.4H8v3h2.6V21z"/></svg></a>
+          <a href="https://api.whatsapp.com/send?phone=5521970387237" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7c.1.2 1.9 2.9 4.6 4 1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.5-.3z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4>Navegação</h4>
+        <ul><li><a href="#sobre">A Prime</a></li><li><a href="#servicos">Serviços</a></li><li><a href="#materiais">Materiais</a></li><li><a href="#projetos">Projetos</a></li><li><a href="#orcamento">Orçamento</a></li></ul>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <ul><li><a href="https://api.whatsapp.com/send?phone=5521970387237" target="_blank" rel="noopener">(21) 97038-7237</a></li><li><a href="mailto:contato@primemarmoraria.com.br">contato@primemarmoraria.com.br</a></li><li>Rio de Janeiro · RJ</li></ul>
+      </div>
+    </div>
+    <div class="copy"><span>© <span id="ano">2026</span> Prime Mármores e Granitos. Todos os direitos reservados.</span><a href="#inicio">Voltar ao topo ↑</a></div>
+  </div>
+</footer>
+
+<a class="wpp" href="https://api.whatsapp.com/send?phone=5521970387237&text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7c.1.2 1.9 2.9 4.6 4 1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.5-.3z"/></svg>
+</a>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Foto ampliada">
+  <button class="x" aria-label="Fechar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+  <button class="ant" aria-label="Foto anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 6-6 6 6 6"/></svg></button>
+  <img alt="">
+  <button class="prox" aria-label="Próxima foto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg></button>
+  <p></p>
+</div>
+
+<script>
+(function(){
+  var h=document.getElementById('topo'),menu=document.getElementById('menu'),hb=document.getElementById('hamb');
+  function solid(){h.classList.toggle('solid',window.scrollY>40)}
+  solid();window.addEventListener('scroll',solid,{passive:true});
+  hb.addEventListener('click',function(){var on=menu.classList.toggle('on');hb.setAttribute('aria-expanded',on)});
+  menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){menu.classList.remove('on');hb.setAttribute('aria-expanded',false)})});
+  document.getElementById('ano').textContent=new Date().getFullYear();
+
+  // reveal
+  var io='IntersectionObserver' in window?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12}):null;
+  document.querySelectorAll('.rv').forEach(function(el){io?io.observe(el):el.classList.add('in')});
+
+  // filtros
+  var figs=[].slice.call(document.querySelectorAll('#galeria figure'));
+  document.querySelectorAll('.filtros button').forEach(function(b){
+    b.addEventListener('click',function(){
+      document.querySelectorAll('.filtros button').forEach(function(x){x.setAttribute('aria-pressed',x===b)});
+      var f=b.dataset.f;
+      figs.forEach(function(fg){fg.classList.toggle('oculto',f!=='todos'&&fg.dataset.c!==f)});
+    });
+  });
+
+  // lightbox
+  var lb=document.getElementById('lb'),li=lb.querySelector('img'),lp=lb.querySelector('p'),cur=0,vis=[];
+  function show(i){cur=(i+vis.length)%vis.length;var fg=vis[cur],im=fg.querySelector('img');li.src=im.src;li.alt=im.alt;lp.textContent=fg.querySelector('figcaption').textContent.replace(/^(\S+)/,'$1 · ')}
+  function open(fg){vis=figs.filter(function(x){return !x.classList.contains('oculto')});lb.classList.add('on');document.body.style.overflow='hidden';show(vis.indexOf(fg));lb.querySelector('.x').focus()}
+  function close(){lb.classList.remove('on');document.body.style.overflow=''}
+  figs.forEach(function(fg){fg.addEventListener('click',function(){open(fg)});fg.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();open(fg)}})});
+  lb.querySelector('.x').addEventListener('click',close);
+  lb.querySelector('.ant').addEventListener('click',function(){show(cur-1)});
+  lb.querySelector('.prox').addEventListener('click',function(){show(cur+1)});
+  lb.addEventListener('click',function(e){if(e.target===lb)close()});
+  document.addEventListener('keydown',function(e){if(!lb.classList.contains('on'))return;if(e.key==='Escape')close();if(e.key==='ArrowLeft')show(cur-1);if(e.key==='ArrowRight')show(cur+1)});
+
+  // formulario -> whatsapp
+  document.getElementById('form').addEventListener('submit',function(e){
+    e.preventDefault();
+    var g=function(id){return document.getElementById(id).value.trim()};
+    if(!g('nome')){document.getElementById('nome').focus();return}
+    var t='Olá! Vim pelo site e gostaria de um orçamento.\n\n*Nome:* '+g('nome')+(g('tel')?'\n*Telefone:* '+g('tel'):'')+'\n*Ambiente:* '+g('amb')+'\n*Material:* '+g('mat')+(g('msg')?'\n*Projeto:* '+g('msg'):'');
+    window.open('https://api.whatsapp.com/send?phone=5521970387237&text='+encodeURIComponent(t),'_blank','noopener');
+  });
+})();
+</script>
+</body>
+</html>
