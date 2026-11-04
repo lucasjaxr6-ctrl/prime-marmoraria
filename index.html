@@ -13,6 +13,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#11203D">
 <link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -60,10 +61,10 @@ header .wrap{display:flex;align-items:center;justify-content:space-between;heigh
 .hamb svg{width:26px;height:26px}
 
 /* hero */
-.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;color:#fff;background:var(--navy2)}
+.hero{position:relative;overflow:hidden;min-height:100svh;display:flex;align-items:flex-end;color:#fff;background:var(--navy2)}
 .hero-bg{position:absolute;inset:0;overflow:hidden}
-.hero-bg img{width:100%;height:100%;object-fit:cover;transform:scale(1.04);animation:zoom 18s ease-out forwards}
-@keyframes zoom{to{transform:scale(1)}}
+.hero-bg .sl{position:absolute;inset:-6% 0 0 0;width:100%;height:106%;object-fit:cover;opacity:0;transform:scale(1.1);transition:opacity 1.8s ease,transform 9s ease-out}
+.hero-bg .sl.on{opacity:1;transform:scale(1)}
 .hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,23,48,.55) 0%,rgba(11,23,48,.25) 35%,rgba(11,23,48,.92) 100%),linear-gradient(90deg,rgba(11,23,48,.75),rgba(11,23,48,0) 70%)}
 .hero .wrap{position:relative;padding-bottom:clamp(60px,10vh,110px);padding-top:140px;width:100%}
 .hero .eyebrow{color:#7FCBF0}
@@ -90,7 +91,7 @@ section{padding:clamp(80px,11vw,140px) 0}
 
 /* servicos */
 .servicos{background:var(--navy);color:#fff;position:relative;overflow:hidden}
-.servicos::before{content:"";position:absolute;right:-140px;top:-140px;width:520px;height:520px;background:url(img/logo-prime.png) no-repeat top center/contain;opacity:.05;pointer-events:none}
+
 .servicos .eyebrow{color:#7FCBF0}
 .servicos .lead{color:var(--mudo-esc)}
 .serv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.1);margin-top:56px;border:1px solid rgba(255,255,255,.1)}
@@ -207,6 +208,107 @@ footer{background:var(--navy2);color:var(--mudo-esc);padding:64px 0 34px;font-si
 .rv.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.hero-bg img{animation:none;transform:none}html{scroll-behavior:auto}}
 
+
+/* ===== motion ===== */
+header .wrap{transition:height .35s ease}
+.marca img{transition:height .35s ease}
+header.solid .wrap{height:66px}
+header.solid .marca img{height:46px}
+
+.hero .anim{opacity:0;transform:translateY(26px);animation:sobe 1s cubic-bezier(.2,.7,.2,1) forwards;animation-delay:var(--d,0s)}
+@keyframes sobe{to{opacity:1;transform:none}}
+.hero h1 .ln{display:block;overflow:hidden;padding-bottom:.08em;margin-bottom:-.08em}
+.hero h1 .ln>span{display:block;transform:translateY(110%);animation:linha 1.15s cubic-bezier(.2,.7,.2,1) forwards;animation-delay:var(--d)}
+@keyframes linha{to{transform:none}}
+.hero-dots{position:absolute;right:28px;bottom:clamp(60px,10vh,110px);display:flex;flex-direction:column;gap:10px;z-index:2}
+.hero-dots button{width:3px;height:34px;background:rgba(255,255,255,.25);border-radius:2px;position:relative;overflow:hidden;padding:0}
+.hero-dots button i{position:absolute;inset:0;background:#8FD3F4;transform:scaleY(0);transform-origin:top}
+.hero-dots button.on i{animation:enche 6s linear forwards}
+@keyframes enche{to{transform:scaleY(1)}}
+.rolar{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);width:22px;height:36px;border:1.5px solid rgba(255,255,255,.45);border-radius:12px;z-index:2}
+.rolar::after{content:"";position:absolute;left:50%;top:7px;width:3px;height:7px;margin-left:-1.5px;border-radius:2px;background:#fff;animation:rola 2s ease-in-out infinite}
+@keyframes rola{0%{opacity:0;transform:translateY(0)}30%{opacity:1}100%{opacity:0;transform:translateY(12px)}}
+
+/* faixa de pedras */
+.faixa{background:var(--pedra);overflow:hidden;padding:22px 0;border-bottom:1px solid var(--veio)}
+.trilho{display:flex;width:max-content;animation:desliza 48s linear infinite}
+.faixa:hover .trilho{animation-play-state:paused}
+.trilho span{font-family:var(--serif);font-style:italic;font-size:clamp(22px,2.6vw,32px);color:var(--navy);white-space:nowrap;padding:0 26px;display:flex;align-items:center;gap:52px}
+.trilho span::after{content:"";width:9px;height:9px;background:linear-gradient(135deg,var(--azul),var(--azul2));transform:rotate(45deg)}
+@keyframes desliza{to{transform:translateX(-50%)}}
+
+/* revelar */
+.rv{transition-delay:var(--d,0s)}
+.rv .eyebrow::before{width:0;transition:width .9s cubic-bezier(.2,.7,.2,1) .25s}
+.rv.in .eyebrow::before{width:28px}
+.wipe{clip-path:inset(100% 0 0 0);transition:clip-path 1.4s cubic-bezier(.7,0,.2,1);transition-delay:var(--d,0s)}
+.wipe.in{clip-path:inset(0 0 0 0)}
+.galeria .wipe img,.arq-box .wipe img{transform:scale(1.18);transition:transform 2s cubic-bezier(.2,.7,.2,1)}
+.galeria .wipe.in img,.arq-box .wipe.in img{transform:scale(1)}
+.galeria figure.wipe.in:hover img{transform:scale(1.06);transition-duration:.9s}
+.arq-ft{overflow:hidden;min-height:360px}
+.arq-ft img{height:100%}
+
+/* brilho de pedra polida */
+.brilho{position:relative;overflow:hidden;isolation:isolate}
+.brilho::after{content:"";position:absolute;inset:-2px;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.32) 48%,rgba(255,255,255,.08) 54%,transparent 66%);transform:translateX(-130%);pointer-events:none;z-index:1}
+.brilho:hover::after{transform:translateX(130%);transition:transform 1s ease}
+.btn-azul.brilho::after{animation:lustro 7s ease-in-out infinite 2.5s}
+@keyframes lustro{0%,82%{transform:translateX(-130%)}100%{transform:translateX(130%)}}
+
+/* veios */
+.veios{position:absolute;pointer-events:none;z-index:0}
+.veios path,.mat .amostra path{fill:none;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 3.2s cubic-bezier(.3,.6,.2,1)}
+.veios.in path,.mat.in .amostra path{stroke-dashoffset:0}
+.veios path:nth-child(2),.mat .amostra path:nth-child(3){transition-delay:.5s}
+.veios path:nth-child(3),.mat .amostra path:nth-child(4){transition-delay:1s}
+.sobre,.processo{position:relative;overflow:hidden}
+.sobre .wrap,.processo .wrap{position:relative;z-index:1}
+.veios-sobre{right:-5%;top:0;width:60%;height:100%}
+.veios-proc{left:-5%;top:0;width:70%;height:100%}
+.mat .amostra svg{transition:transform 1.6s cubic-bezier(.2,.7,.2,1)}
+.mat:hover .amostra svg{transform:scale(1.08)}
+.mat{transition:transform .5s cubic-bezier(.2,.7,.2,1),box-shadow .5s,opacity .8s ease}
+.mat:hover{transform:translateY(-6px);box-shadow:0 26px 50px -30px rgba(17,32,61,.45)}
+
+/* servicos */
+.serv{position:relative}
+.serv::after{content:"";position:absolute;left:32px;right:32px;bottom:0;height:2px;background:linear-gradient(90deg,var(--azul),var(--azul2));transform:scaleX(0);transform-origin:left;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.serv:hover::after{transform:scaleX(1)}
+.serv .ic{transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.serv:hover .ic{transform:translateY(-4px)}
+.serv .ic *{stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1.8s ease;transition-delay:calc(var(--d,0s) + .35s)}
+.serv.in .ic *{stroke-dashoffset:0}
+.marca-dagua{position:absolute;right:-90px;top:-60px;width:520px;opacity:.06;pointer-events:none;animation:flutua 12s ease-in-out infinite}
+@keyframes flutua{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(24px) rotate(2deg)}}
+
+/* processo */
+.etapa{border-top:1px solid var(--veio)}
+.etapa::before{border-top:0}
+.etapa::after{content:"";position:absolute;top:-1px;left:0;height:2px;width:0;background:linear-gradient(90deg,var(--azul2),var(--azul));transition:width 1.4s cubic-bezier(.7,0,.2,1);transition-delay:calc(var(--d,0s) + .2s)}
+.etapa.in::after{width:100%}
+
+/* parallax */
+[data-par]{will-change:transform}
+
+/* lightbox */
+.lb{opacity:0;transition:opacity .35s ease}
+.lb.on{opacity:1}
+.lb img{transform:scale(.96);transition:transform .45s cubic-bezier(.2,.7,.2,1),opacity .3s}
+.lb.on img{transform:scale(1)}
+.lb img.troca{opacity:0}
+
+/* whatsapp */
+.wpp::before{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid #25D366;animation:onda 2.8s ease-out infinite}
+@keyframes onda{0%{transform:scale(1);opacity:.7}70%,100%{transform:scale(1.6);opacity:0}}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .hero .anim,.hero h1 .ln>span{opacity:1;transform:none}
+  .wipe{clip-path:none}.veios path,.mat .amostra path,.serv .ic *{stroke-dashoffset:0}
+  .hero-bg .sl.on{transform:none}
+}
+
 /* responsivo */
 @media (max-width:980px){
   .menu{position:fixed;inset:78px 0 auto 0;flex-direction:column;align-items:stretch;gap:0;background:var(--navy);padding:8px 28px 26px;transform:translateY(-12px);opacity:0;pointer-events:none;transition:all .25s;box-shadow:0 20px 40px rgba(0,0,0,.3)}
@@ -232,11 +334,23 @@ footer{background:var(--navy2);color:var(--mudo-esc);padding:64px 0 34px;font-si
   .ft{grid-template-columns:1fr}
   .hero-ctas{flex-direction:column}.hero-ctas .btn{justify-content:center}
   .lb{padding:60px 14px}
+  .hero-dots{display:none}
+  .rolar{display:none}
+  .marca-dagua{width:340px;right:-120px}
+  header.solid .marca img{height:40px}
   .lb .ant,.lb .prox{bottom:14px;top:auto}
 }
 </style>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="gm" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="5" y2="5"><stop offset="0" stop-color="#23C3F0"/><stop offset=".55" stop-color="#1E8FD6"/><stop offset="1" stop-color="#2B3FA6"/></linearGradient>
+    <symbol id="marca" viewBox="-46 -36 92 72">
+      <g transform="scale(1.28 1) rotate(45) scale(10) translate(-2.5 -2.5)" fill="url(#gm)"><rect x="0.00" y="0.00" width="3.72" height="1.15"/><rect x="3.85" y="0.00" width="1.15" height="3.72"/><rect x="1.28" y="3.85" width="3.72" height="1.15"/><rect x="0.00" y="1.28" width="1.15" height="3.72"/><rect x="2.58" y="1.30" width="1.12" height="1.12"/><rect x="1.30" y="2.58" width="1.12" height="1.12"/></g>
+    </symbol>
+  </defs>
+</svg>
 
 <header id="topo">
   <div class="wrap">
@@ -247,7 +361,7 @@ footer{background:var(--navy2);color:var(--mudo-esc);padding:64px 0 34px;font-si
       <a href="#materiais">Materiais</a>
       <a href="#projetos">Projetos</a>
       <a href="#processo">Como trabalhamos</a>
-      <a href="#orcamento" class="btn btn-azul">Pedir orçamento</a>
+      <a href="#orcamento" class="btn btn-azul brilho">Pedir orçamento</a>
     </nav>
     <button class="hamb" id="hamb" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
@@ -257,25 +371,34 @@ footer{background:var(--navy2);color:var(--mudo-esc);padding:64px 0 34px;font-si
 
 <main>
 <section class="hero" id="inicio" style="padding:0">
-  <div class="hero-bg"><img src="img/cozinha-vista-mar.jpg" alt="Ilha de cozinha em pedra branca com vista para o mar"></div>
+  <div class="hero-bg" data-par="0.25">
+    <img class="sl on" src="img/cozinha-vista-mar.jpg" alt="Ilha de cozinha em pedra branca com vista para o mar">
+    <img class="sl" src="img/bar-onix.jpg" alt="Bar com balcão em ônix retroiluminado">
+    <img class="sl" src="img/sala-jantar.jpg" alt="Mesa de jantar com tampo de mármore">
+  </div>
+  <div class="hero-dots" aria-label="Fotos em destaque"><button class="on" aria-label="Foto 1"><i></i></button><button aria-label="Foto 2"><i></i></button><button aria-label="Foto 3"><i></i></button></div>
+  <span class="rolar" aria-hidden="true"></span>
   <div class="wrap">
-    <span class="eyebrow">Marmoraria · Rio de Janeiro</span>
-    <h1>A pedra certa, <em>sob medida</em> para o seu projeto.</h1>
-    <p>Mármores, granitos e superfícies industrializadas para cozinhas, banheiros, lavabos e áreas gourmet — com medição, corte e instalação feitos pela nossa equipe.</p>
-    <div class="hero-ctas">
-      <a class="btn btn-azul" href="#orcamento">Solicitar orçamento
+    <span class="eyebrow anim" style="--d:.2s">Marmoraria · Rio de Janeiro</span>
+    <h1><span class="ln"><span style="--d:.35s">A pedra certa,</span></span><span class="ln"><span style="--d:.5s"><em>sob medida</em> para</span></span><span class="ln"><span style="--d:.65s">o seu projeto.</span></span></h1>
+    <p class="anim" style="--d:.95s">Mármores, granitos e superfícies industrializadas para cozinhas, banheiros, lavabos e áreas gourmet — com medição, corte e instalação feitos pela nossa equipe.</p>
+    <div class="hero-ctas anim" style="--d:1.15s">
+      <a class="btn btn-azul brilho" href="#orcamento">Solicitar orçamento
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       <a class="btn btn-linha" href="#projetos">Ver projetos</a>
     </div>
-    <div class="hero-faixa"><span>Mármores</span><span>Granitos</span><span>Quartzo</span><span>Superfícies ultracompactas</span></div>
+    <div class="hero-faixa anim" style="--d:1.35s"><span>Mármores</span><span>Granitos</span><span>Quartzo</span><span>Superfícies ultracompactas</span></div>
   </div>
 </section>
 
+<div class="faixa" aria-hidden="true"><div class="trilho"><span>Mármore Carrara</span><span>Granito São Gabriel</span><span>Quartzo branco</span><span>Travertino</span><span>Ônix</span><span>Calacatta</span><span>Preto Absoluto</span><span>Superfícies ultracompactas</span><span>Mármore Carrara</span><span>Granito São Gabriel</span><span>Quartzo branco</span><span>Travertino</span><span>Ônix</span><span>Calacatta</span><span>Preto Absoluto</span><span>Superfícies ultracompactas</span></div></div>
+
 <section class="sobre" id="sobre">
+  <svg class="veios veios-sobre draw" viewBox="0 0 600 700" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M620 40 C 480 120 520 230 380 300 S 200 420 260 560 S 160 690 90 720" stroke="#CFC7BB" stroke-width="1.4"/><path pathLength="1" d="M620 200 C 520 260 460 300 470 400 S 380 560 300 720" stroke="#DAD3C8" stroke-width="1"/><path pathLength="1" d="M440 -10 C 420 80 360 120 300 160" stroke="#C9C0B3" stroke-width=".8"/></svg>
   <div class="wrap">
     <div class="sobre-fotos rv">
-      <img class="f1" src="img/sala-jantar.jpg" alt="Mesa de jantar redonda com tampo de mármore" loading="lazy">
-      <img class="f2" src="img/lavabo-cuba.jpg" alt="Lavabo com bancada em pedra clara e cuba preta" loading="lazy">
+      <img class="f1 wipe" src="img/sala-jantar.jpg" alt="Mesa de jantar redonda com tampo de mármore" loading="lazy">
+      <img class="f2 wipe" style="--d:.35s" data-par="-0.08" src="img/lavabo-cuba.jpg" alt="Lavabo com bancada em pedra clara e cuba preta" loading="lazy">
     </div>
     <div class="sobre-txt rv">
       <span class="eyebrow">A Prime</span>
@@ -292,6 +415,7 @@ footer{background:var(--navy2);color:var(--mudo-esc);padding:64px 0 34px;font-si
 </section>
 
 <section class="servicos" id="servicos">
+  <svg class="marca-dagua" aria-hidden="true"><use href="#marca"/></svg>
   <div class="wrap">
     <div class="rv">
       <span class="eyebrow">Serviços</span>
@@ -391,13 +515,13 @@ footer{background:var(--navy2);color:var(--mudo-esc);padding:64px 0 34px;font-si
       <button aria-pressed="false" data-f="social">Área social</button>
     </div>
     <div class="galeria" id="galeria">
-      <figure class="largo alto" data-c="cozinha" tabindex="0"><img src="img/cozinha-vista-mar.jpg" alt="Ilha de cozinha em pedra branca integrada à sala com vista para o mar" loading="lazy"><figcaption><small>Cozinha</small>Ilha em pedra branca com vista para o mar</figcaption></figure>
-      <figure class="alto" data-c="social" tabindex="0"><img src="img/bar-onix.jpg" alt="Bar com balcão em pedra translúcida retroiluminada" loading="lazy"><figcaption><small>Bar</small>Balcão em ônix retroiluminado</figcaption></figure>
-      <figure class="alto" data-c="banheiro" tabindex="0"><img src="img/lavabo-preto.jpg" alt="Lavabo com bancada esculpida em pedra escura" loading="lazy"><figcaption><small>Lavabo</small>Bancada com cuba esculpida em pedra escura</figcaption></figure>
-      <figure class="alto" data-c="cozinha" tabindex="0"><img src="img/cozinha-preta.jpg" alt="Cozinha com bancada preta e marcenaria em madeira" loading="lazy"><figcaption><small>Cozinha</small>Bancada preta com cuba dupla</figcaption></figure>
-      <figure class="alto" data-c="social" tabindex="0"><img src="img/sala-jantar.jpg" alt="Mesa de jantar redonda com tampo de mármore" loading="lazy"><figcaption><small>Sala de jantar</small>Tampo de mesa em mármore</figcaption></figure>
-      <figure class="alto" data-c="banheiro" tabindex="0"><img src="img/banheiro-branco.jpg" alt="Bancada suspensa branca com duas cubas de apoio" loading="lazy"><figcaption><small>Banheiro</small>Bancada suspensa com cubas de apoio</figcaption></figure>
-      <figure class="alto" data-c="banheiro" tabindex="0"><img src="img/lavabo-cuba.jpg" alt="Lavabo com bancada em pedra clara e cuba preta de apoio" loading="lazy"><figcaption><small>Lavabo</small>Pedra clara com cuba de apoio preta</figcaption></figure>
+      <figure class="largo alto wipe brilho" data-c="cozinha" tabindex="0"><img src="img/cozinha-vista-mar.jpg" alt="Ilha de cozinha em pedra branca integrada à sala com vista para o mar" loading="lazy"><figcaption><small>Cozinha</small>Ilha em pedra branca com vista para o mar</figcaption></figure>
+      <figure class="alto wipe brilho" data-c="social" tabindex="0"><img src="img/bar-onix.jpg" alt="Bar com balcão em pedra translúcida retroiluminada" loading="lazy"><figcaption><small>Bar</small>Balcão em ônix retroiluminado</figcaption></figure>
+      <figure class="alto wipe brilho" data-c="banheiro" tabindex="0"><img src="img/lavabo-preto.jpg" alt="Lavabo com bancada esculpida em pedra escura" loading="lazy"><figcaption><small>Lavabo</small>Bancada com cuba esculpida em pedra escura</figcaption></figure>
+      <figure class="alto wipe brilho" data-c="cozinha" tabindex="0"><img src="img/cozinha-preta.jpg" alt="Cozinha com bancada preta e marcenaria em madeira" loading="lazy"><figcaption><small>Cozinha</small>Bancada preta com cuba dupla</figcaption></figure>
+      <figure class="alto wipe brilho" data-c="social" tabindex="0"><img src="img/sala-jantar.jpg" alt="Mesa de jantar redonda com tampo de mármore" loading="lazy"><figcaption><small>Sala de jantar</small>Tampo de mesa em mármore</figcaption></figure>
+      <figure class="alto wipe brilho" data-c="banheiro" tabindex="0"><img src="img/banheiro-branco.jpg" alt="Bancada suspensa branca com duas cubas de apoio" loading="lazy"><figcaption><small>Banheiro</small>Bancada suspensa com cubas de apoio</figcaption></figure>
+      <figure class="alto wipe brilho" data-c="banheiro" tabindex="0"><img src="img/lavabo-cuba.jpg" alt="Lavabo com bancada em pedra clara e cuba preta de apoio" loading="lazy"><figcaption><small>Lavabo</small>Pedra clara com cuba de apoio preta</figcaption></figure>
     </div>
     <div class="port-cta">
       <a class="link-ig" href="https://www.instagram.com/primemarmorariarj/" target="_blank" rel="noopener">
@@ -408,6 +532,7 @@ footer{background:var(--navy2);color:var(--mudo-esc);padding:64px 0 34px;font-si
 </section>
 
 <section class="processo" id="processo">
+  <svg class="veios veios-proc draw" viewBox="0 0 700 600" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M-20 80 C 120 140 180 60 300 120 S 520 220 720 160" stroke="#D6CEC2" stroke-width="1.3"/><path pathLength="1" d="M-20 420 C 140 380 220 470 360 430 S 560 380 720 470" stroke="#DED8CE" stroke-width="1"/><path pathLength="1" d="M200 -10 C 230 120 180 220 240 320" stroke="#CFC7BB" stroke-width=".8"/></svg>
   <div class="wrap">
     <div class="rv">
       <span class="eyebrow">Como trabalhamos</span>
@@ -426,12 +551,12 @@ footer{background:var(--navy2);color:var(--mudo-esc);padding:64px 0 34px;font-si
 <section class="arq">
   <div class="wrap">
     <div class="arq-box rv">
-      <img src="img/lavabo-preto.jpg" alt="Detalhe de bancada esculpida em pedra escura" loading="lazy">
+      <div class="arq-ft wipe"><img src="img/lavabo-preto.jpg" alt="Detalhe de bancada esculpida em pedra escura" loading="lazy" data-par="0.06"></div>
       <div class="arq-txt">
         <span class="eyebrow">Arquitetos e designers</span>
         <h2>Seu projeto executado com fidelidade.</h2>
         <p>Atuamos em parceria com escritórios de arquitetura e design de interiores, interpretando detalhamentos técnicos e mantendo o prazo da obra. Envie seu projeto e conte com atendimento dedicado.</p>
-        <a class="btn btn-azul" href="https://api.whatsapp.com/send?phone=5521970387237&text=Ol%C3%A1!%20Sou%20arquiteto(a)%20e%20gostaria%20de%20falar%20sobre%20um%20projeto." target="_blank" rel="noopener">Falar sobre parceria</a>
+        <a class="btn btn-azul brilho" href="https://api.whatsapp.com/send?phone=5521970387237&text=Ol%C3%A1!%20Sou%20arquiteto(a)%20e%20gostaria%20de%20falar%20sobre%20um%20projeto." target="_blank" rel="noopener">Falar sobre parceria</a>
       </div>
     </div>
   </div>
@@ -467,7 +592,7 @@ footer{background:var(--navy2);color:var(--mudo-esc);padding:64px 0 34px;font-si
           <select id="mat" name="mat"><option>Ainda não sei</option><option>Mármore</option><option>Granito</option><option>Quartzo</option><option>Superfície ultracompacta</option></select></div>
         <div class="campo full"><label for="msg">Conte sobre o projeto</label><textarea id="msg" name="msg" placeholder="Medidas aproximadas, bairro da obra, prazo…"></textarea></div>
       </div>
-      <button class="btn btn-azul" type="submit">
+      <button class="btn btn-azul brilho" type="submit">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z" opacity=".25"/><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
         Enviar pelo WhatsApp</button>
       <p class="nota">Ao enviar, o WhatsApp abre com a sua mensagem pronta.</p>
@@ -523,8 +648,30 @@ footer{background:var(--navy2);color:var(--mudo-esc);padding:64px 0 34px;font-si
   document.getElementById('ano').textContent=new Date().getFullYear();
 
   // reveal
-  var io='IntersectionObserver' in window?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12}):null;
-  document.querySelectorAll('.rv').forEach(function(el){io?io.observe(el):el.classList.add('in')});
+  var reduz=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // escalonar grupos
+  ['.serv-grid','.mat-grid','.proc-grid','.galeria','.selos'].forEach(function(g){
+    var w=document.querySelector(g); if(!w) return;
+    [].slice.call(w.children).forEach(function(c,i){c.style.setProperty('--d',(i%4*0.12)+'s')});
+  });
+  document.querySelectorAll('.serv .ic *').forEach(function(el){el.setAttribute('pathLength','1')});
+  var io='IntersectionObserver' in window?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15,rootMargin:'0px 0px -40px 0px'}):null;
+  document.querySelectorAll('.rv,.draw').forEach(function(el){io&&!reduz?io.observe(el):el.classList.add('in')});
+  // fotos com recorte: verificação por posição (o observer não enxerga elemento recortado)
+  var wipes=[].slice.call(document.querySelectorAll('.wipe'));
+  function checaWipe(){var vh=window.innerHeight;wipes=wipes.filter(function(el){var r=el.getBoundingClientRect();if(reduz||(r.top<vh*.9&&r.bottom>0)){el.classList.add('in');return false}return true})}
+  checaWipe();window.addEventListener('scroll',function(){requestAnimationFrame(checaWipe)},{passive:true});window.addEventListener('resize',checaWipe);
+
+  // hero slides
+  var sls=[].slice.call(document.querySelectorAll('.hero-bg .sl')),dots=[].slice.call(document.querySelectorAll('.hero-dots button')),si=0,tm;
+  function slide(n){sls[si].classList.remove('on');dots[si].classList.remove('on');si=(n+sls.length)%sls.length;sls[si].classList.add('on');void dots[si].offsetWidth;dots[si].classList.add('on');clearTimeout(tm);if(!reduz)tm=setTimeout(function(){slide(si+1)},6000)}
+  dots.forEach(function(d,i){d.addEventListener('click',function(){slide(i)})});
+  if(!reduz)tm=setTimeout(function(){slide(1)},6000);
+
+  // parallax suave
+  var par=[].slice.call(document.querySelectorAll('[data-par]')),tk=false;
+  function moveP(){var vh=window.innerHeight;par.forEach(function(el){var r=el.getBoundingClientRect(),c=r.top+r.height/2-vh/2;var f=parseFloat(el.dataset.par);el.style.transform=el.classList.contains('hero-bg')?'translateY('+(window.scrollY*f)+'px)':'translateY('+(c*f)+'px)'+(el.tagName==='IMG'&&el.closest('.arq-ft')?' scale(1.12)':'')});tk=false}
+  if(!reduz){window.addEventListener('scroll',function(){if(!tk){tk=true;requestAnimationFrame(moveP)}},{passive:true});moveP()}
 
   // filtros
   var figs=[].slice.call(document.querySelectorAll('#galeria figure'));
@@ -538,7 +685,7 @@ footer{background:var(--navy2);color:var(--mudo-esc);padding:64px 0 34px;font-si
 
   // lightbox
   var lb=document.getElementById('lb'),li=lb.querySelector('img'),lp=lb.querySelector('p'),cur=0,vis=[];
-  function show(i){cur=(i+vis.length)%vis.length;var fg=vis[cur],im=fg.querySelector('img');li.src=im.src;li.alt=im.alt;lp.textContent=fg.querySelector('figcaption').textContent.replace(/^(\S+)/,'$1 · ')}
+  function show(i){cur=(i+vis.length)%vis.length;var fg=vis[cur],im=fg.querySelector('img');li.classList.add('troca');setTimeout(function(){li.src=im.src;li.alt=im.alt;li.classList.remove('troca')},lb.classList.contains('on')?180:0);var fc=fg.querySelector('figcaption'),sm=fc.querySelector('small').textContent;lp.textContent=sm+' · '+fc.textContent.slice(sm.length)}
   function open(fg){vis=figs.filter(function(x){return !x.classList.contains('oculto')});lb.classList.add('on');document.body.style.overflow='hidden';show(vis.indexOf(fg));lb.querySelector('.x').focus()}
   function close(){lb.classList.remove('on');document.body.style.overflow=''}
   figs.forEach(function(fg){fg.addEventListener('click',function(){open(fg)});fg.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();open(fg)}})});
